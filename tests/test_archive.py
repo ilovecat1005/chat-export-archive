@@ -68,7 +68,7 @@ class ArchiveTest(unittest.TestCase):
         names = [p.stem for p in self.dir.rglob("*.md") if p.name != "index.md"]
         pandas_named = [n for n in names if "pandas" in n]
         self.assertEqual(len(pandas_named), 2)
-        self.assertIn("Python-pandas-問題 (2)", pandas_named)
+        self.assertIn("Python-pandas-問題-(2)", pandas_named)
 
     def test_unsafe_characters_removed(self):
         count = archive.archive(CHATGPT, self.dir)
